@@ -20,7 +20,7 @@ make clean
 
 ---
 ## Run All Unit Tests
-```
+```bash
 # Normal Run
 for i in `find -name "*_test"`; do $i; done
 
