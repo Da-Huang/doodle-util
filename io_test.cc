@@ -111,6 +111,8 @@ void TestComplexVectorIO() {
   Read(&iss, &vvstr2);
   std::vector<std::vector<bool>> vvb2;
   Read(&iss, &vvb2);
+
+  // TODO: Apply new logging system test.
 }
 
 void TestIO() {
