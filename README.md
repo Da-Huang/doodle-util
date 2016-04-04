@@ -3,6 +3,7 @@ This library provides useful utils.
 
 ---
 ## Modules
+io
 
 ---
 ## Requirements
