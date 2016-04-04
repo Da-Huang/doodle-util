@@ -3,8 +3,8 @@ This library provides useful utils.
 
 ---
 ## Modules
-commandline\_flag
-io
+* [`commandline\_flag`](commandline_flag.h)
+* [`io`](io.h)
 
 ---
 ## Requirements
