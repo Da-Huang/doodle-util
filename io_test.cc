@@ -23,8 +23,6 @@ void TestUsualIO() {
   Write(&oss, size);
   bool b = true;
   Write(&oss, b);
-  short s = 34;
-  Write(&oss, s);
   char c = ';';
   Write(&oss, c);
 
@@ -57,9 +55,6 @@ void TestUsualIO() {
   bool b2;
   Read(&iss, &b2);
   CHECK_EQ(b, b2) << "b2 mismatched.";
-  short s2;
-  Read(&iss, &s2);
-  CHECK_EQ(s, s2) << "s2 mismatched.";
   char c2;
   Read(&iss, &c2);
   CHECK_EQ(c, c2) << "c2 mismatched.";
@@ -80,7 +75,9 @@ void TestUsualIO() {
   Read(&iss, &vb2);
   CHECK_EQ(vb.size(), vb2.size()) << "Size of vb2 mismatched.";
   for (size_t i = 0; i < vb.size(); ++i) {
-    CHECK_EQ(vb[i], vb2[i]) << "vb2[" << i << "] mismatched.";
+    bool vbi = vb[i];
+    bool vb2i = vb2[i];
+    CHECK_EQ(vbi, vb2i) << "vb2[" << i << "] mismatched.";
   }
 }
 
