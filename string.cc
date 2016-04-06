@@ -1,5 +1,6 @@
 #include "string.h"
 
+#include <sstream>
 #include <string>
 
 namespace util {
@@ -17,12 +18,16 @@ std::string ToString<char>(const char& item) {
 
 template <>
 std::string ToString<double>(const double& item) {
-  return std::to_string(item);
+  std::ostringstream oss;
+  oss << item;
+  return oss.str();
 }
 
 template <>
 std::string ToString<float>(const float& item) {
-  return std::to_string(item);
+  std::ostringstream oss;
+  oss << item;
+  return oss.str();
 }
 
 template <>
@@ -74,6 +79,10 @@ void FromString<size_t>(const std::string& str, size_t* item) {
 template <>
 void FromString<std::string>(const std::string& str, std::string* item) {
   *item = str;
+}
+
+std::string ToString(const char* item) {
+  return item;
 }
 
 }  // namespace util

@@ -55,6 +55,9 @@ DECLARE_FROM_STRING_FUNCTION(std::string);
 template <typename Type>
 std::string ToString(const std::vector<Type>& v);
 
+// Stringfies const char*.
+std::string ToString(const char* item);
+
 }  // namespace util
 
 #include "string.incl.h"
