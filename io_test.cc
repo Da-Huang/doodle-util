@@ -4,6 +4,8 @@
 #include <string>
 #include <vector>
 
+#include "check.h"
+#include "init.h"
 #include "logging.h"
 
 namespace util {
@@ -112,7 +114,7 @@ void TestComplexVectorIO() {
   // TODO: Apply new logging system test.
 }
 
-void TestIO() {
+void Test() {
   TestUsualIO();
   TestComplexVectorIO();
 }
@@ -121,7 +123,8 @@ void TestIO() {
 }  // namespace util
 
 int main(int argc, char** argv) {
-  ::util::TestIO();
+  ::util::Init(argv[0], argc, argv);
+  ::util::Test();
   LOG(INFO) << "PASS";
   return 0;
 }
