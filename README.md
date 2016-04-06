@@ -5,6 +5,7 @@ This library provides useful utils.
 ## Modules
 * [`commandline_flag`](commandline_flag.h)
 * [`io`](io.h)
+* [`string`](string.h)
 
 ---
 ## Requirements
