@@ -85,4 +85,19 @@ std::string ToString(const char* item) {
   return item;
 }
 
+size_t Strlen(const char* str) {
+  size_t i = 0;
+  while (str[i]) ++i;
+  return i;
+}
+
+void Strcpy(char* dest, const char* src) {
+  size_t i = 0;
+  while (src[i]) {
+    dest[i] = src[i];
+    ++i;
+  }
+  dest[i] = 0;
+}
+
 }  // namespace util

@@ -45,7 +45,7 @@ void TestBasicFromString() {
   CHECK_EQ("abcdef", str);
 }
 
-void TestVectorString() {
+void TestVectorToString() {
   CHECK_EQ("[]", ToString(std::vector<int>{}));
   CHECK_EQ("[1, 2, 3]", ToString(std::vector<size_t>{1, 2, 3}));
   CHECK_EQ("[abc, ef, , ghij]",
@@ -55,11 +55,28 @@ void TestVectorString() {
                {"abc", "ef"}, {}, {"ghij"}}));
 }
 
+void TestStringUtilCase(const char* str) {
+  // Strlen
+  size_t str_len = Strlen(str);
+  CHECK_EQ(std::string(str).size(), str_len);
+
+  // Strcpy
+  char copy_str[str_len + 1];
+  Strcpy(copy_str, str);
+  CHECK_EQ(std::string(str), copy_str);
+}
+
+void TestStringUtil() {
+  TestStringUtilCase("");
+  TestStringUtilCase("a\nb");
+}
+
 void Test() {
   TestBasicToString();
   TestBasicFromString();
+  TestVectorToString();
 
-  TestVectorString();
+  TestStringUtil();
 }
 
 }  // namespace

@@ -1,5 +1,4 @@
-// This file specifies uniform interfaces of stringification and
-// destringification for common data types.
+// This file specifies uniform interfaces related to string.
 
 #ifndef UTIL_STRING_H_
 #define UTIL_STRING_H_
@@ -8,6 +7,8 @@
 #include <vector>
 
 namespace util {
+
+// Uniform stringification and destringification for common data types.
 
 // Stringifies item.
 //
@@ -57,6 +58,19 @@ std::string ToString(const std::vector<Type>& v);
 
 // Stringfies const char*.
 std::string ToString(const char* item);
+
+// Common string utils.
+
+// Gets length of a string.
+//
+// `str` cannot be nullptr.
+size_t Strlen(const char* str);
+
+// Copies string from src to dest.
+//
+// `src` and `dest` cannot be nullptr. `dest` should provide enough space and
+// cannot be overlapped with `src`.
+void Strcpy(char* dest, const char* src);
 
 }  // namespace util
 
