@@ -3,10 +3,9 @@
 #include <cstdlib>
 #include <string>
 #include <unordered_map>
-#include <vector>
 
+#include "check.h"
 #include "commandline_flag.h"
-#include "logging.h"
 
 DEFINE_bool(help, false, "Show help information.");
 
@@ -72,7 +71,7 @@ void Init(const char* name, int argc, char** argv) {
          *AbstractCommandlineFlag::mutable_flags()) {
       std::cerr << flag->ToString() << std::endl;
     }
-    std::exit(0);
+    std::exit(EXIT_SUCCESS);
   }
 }
 
