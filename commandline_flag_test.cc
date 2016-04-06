@@ -29,6 +29,7 @@ DECLARE_bool(help);
 DECLARE_int(v);
 
 namespace util {
+namespace {
 
 void TestDefault() {
   CHECK_EQ(true, FLAG_b);
@@ -71,6 +72,7 @@ void Test() {
   TestHelp();
 }
 
+}  // namespace
 }  // namespace util
 
 int main(int argc, char** argv) {
