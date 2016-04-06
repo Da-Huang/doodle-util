@@ -2,7 +2,7 @@ GXX = g++
 INCLUDES = -I.
 CXXFLAGS = \
 -std=c++11 -Wall $(INCLUDES) -march=native -funroll-loops -O3
-LDFLAGS = -lm -rdynamic
+LDFLAGS = -rdynamic
 CXX = $(GXX)
 LD = $(GXX)
 
