@@ -6,6 +6,7 @@
 #include "check.h"
 #include "init.h"
 #include "logging.h"
+#include "macro.h"
 
 DEFINE_bool(b, true, "Test bool flag.");
 
@@ -53,7 +54,7 @@ void TestHelp() {
       "v: Log level. [3]",
   };
   std::unordered_set<std::string> help_set;
-  for (size_t i = 0; i < sizeof(help) / sizeof(help[0]); ++i) {
+  for (size_t i = 0; i < ARRAY_SIZE(help); ++i) {
     help_set.insert(help[i]);
   }
   CHECK_EQ(help_set.size(), AbstractCommandlineFlag::mutable_flags()->size());
