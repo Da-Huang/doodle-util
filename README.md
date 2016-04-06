@@ -3,8 +3,10 @@ This library provides useful utils.
 
 ---
 ## Modules
+* [`check`](check.h)
 * [`commandline_flag`](commandline_flag.h)
 * [`io`](io.h)
+* [`logging`](logging.h)
 * [`string`](string.h)
 
 ---

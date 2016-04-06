@@ -1,8 +1,8 @@
 GXX = g++
 INCLUDES = -I.
 CXXFLAGS = \
--std=c++11 -Wall $(INCLUDES) -march=native -funroll-loops -fopenmp -O3
-LDFLAGS = -lm -fopenmp
+-std=c++11 -Wall $(INCLUDES) -march=native -funroll-loops -O3
+LDFLAGS = -lm -rdynamic
 CXX = $(GXX)
 LD = $(GXX)
 
