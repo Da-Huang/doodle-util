@@ -48,6 +48,8 @@ void TestBasicFromString() {
 void TestVectorToString() {
   CHECK_EQ("[]", ToString(std::vector<int>{}));
   CHECK_EQ("[1, 2, 3]", ToString(std::vector<size_t>{1, 2, 3}));
+  CHECK_EQ("[true, false, false]",
+           ToString(std::vector<bool>{true, false, false}));
   CHECK_EQ("[abc, ef, , ghij]",
            ToString(std::vector<std::string>{"abc", "ef", "", "ghij"}));
   CHECK_EQ("[[abc, ef], [], [ghij]]",
