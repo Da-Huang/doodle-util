@@ -1,8 +1,8 @@
-// This file specifies uniform serialization and deserialization for different
-// types.
-
 #ifndef UTIL_IO_H_
 #define UTIL_IO_H_
+
+// This file specifies uniform serialization and deserialization for different
+// types.
 
 #include <iostream>
 #include <string>

@@ -1,7 +1,7 @@
-// This file specifies interfaces for initializing a project.
-
 #ifndef UTIL_INIT_H_
 #define UTIL_INIT_H_
+
+// This file specifies interfaces for initializing a project.
 
 namespace util {
 

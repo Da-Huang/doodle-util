@@ -1,7 +1,7 @@
-// This file specifies uniform interfaces related to string.
-
 #ifndef UTIL_STRING_H_
 #define UTIL_STRING_H_
+
+// This file specifies uniform interfaces related to string.
 
 #include <string>
 #include <vector>

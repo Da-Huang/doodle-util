@@ -1,7 +1,7 @@
-// This file provides macros of defining and declaring commandline flags.
-
 #ifndef UTIL_COMMANDLINE_FLAG_H_
 #define UTIL_COMMANDLINE_FLAG_H_
+
+// This file provides macros of defining and declaring commandline flags.
 
 #include <string>
 #include <vector>
