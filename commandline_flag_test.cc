@@ -1,5 +1,8 @@
 #include "commandline_flag.h"
 
+#include <string>
+#include <unordered_set>
+
 #include "check.h"
 #include "init.h"
 #include "logging.h"
@@ -20,11 +23,13 @@ DEFINE_string(str, "abcdef", "Test string flag.");
 
 DECLARE_int(backtrace_buffer_size);
 
+DECLARE_bool(help);
+
 DECLARE_int(v);
 
 namespace util {
 
-void Test() {
+void TestDefault() {
   CHECK_EQ(true, FLAG_b);
   CHECK_EQ('C', FLAG_c);
   CHECK_EQ(123.456, FLAG_d);
@@ -34,7 +39,35 @@ void Test() {
   CHECK_EQ("abcdef", FLAG_str);
 
   CHECK_EQ(100, FLAG_backtrace_buffer_size);
+  CHECK_EQ(false, FLAG_help);
   CHECK_EQ(int(Logger::Level::INFO), FLAG_v);
+}
+
+void TestHelp() {
+  static const char* help[] = {
+      "b: Test bool flag. [true]", "c: Test char flag. [C]",
+      "d: Test double flag. [123.456]", "f: Test float flag. [12.3]",
+      "i: Test int flag. [123]", "size: Test size flag. [1234]",
+      "str: Test string flag. [abcdef]", "help: Show help information. [false]",
+      "backtrace_buffer_size: The buffer size for backtrace. [100]",
+      "v: Log level. [3]",
+  };
+  std::unordered_set<std::string> help_set;
+  for (size_t i = 0; i < sizeof(help) / sizeof(help[0]); ++i) {
+    help_set.insert(help[i]);
+  }
+  CHECK_EQ(help_set.size(), AbstractCommandlineFlag::mutable_flags()->size());
+  for (const AbstractCommandlineFlag* flag :
+       *AbstractCommandlineFlag::mutable_flags()) {
+    CHECK_THAT(*flag, [&help_set](const AbstractCommandlineFlag& flag) {
+      return help_set.find(ToString(flag)) != help_set.end();
+    });
+  }
+}
+
+void Test() {
+  TestDefault();
+  TestHelp();
 }
 
 }  // namespace util
