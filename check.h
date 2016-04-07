@@ -27,8 +27,8 @@
 // Checks whether predicate(target) is true.
 //
 // Outputs infomation and fails, if it is false.
-#define CHECK_THAT(target, predicate)                                          \
-  ::util::Logger(!(predicate(target)), ::util::Logger::Level::FATAL).stream()  \
+#define CHECK_THAT(target, predicate)                                         \
+  ::util::Logger(!(predicate(target)), ::util::Logger::Level::FATAL).stream() \
       << "C:" << DEBUG_MESSAGE << "!" #predicate " " #target ":" << std::endl \
       << "Target " #target ": " << ::util::ToString(target) << std::endl
 
