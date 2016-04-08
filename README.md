@@ -7,6 +7,7 @@ This library provides useful utils.
 * [`commandline_flag`](commandline_flag.h)
 * [`io`](io.h)
 * [`logging`](logging.h)
+* [`stream`](stream)
 * [`string`](string.h)
 
 ---
