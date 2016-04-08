@@ -3,3 +3,4 @@
 *.swp
 *main
 *test
+.ycm_extra_conf.py*
