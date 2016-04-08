@@ -6,6 +6,7 @@ This library provides useful utils.
 * [`check`](check.h)
 * [`commandline_flag`](commandline_flag.h)
 * [`io`](io.h)
+* [`iterator`](iterator)
 * [`logging`](logging.h)
 * [`stream`](stream)
 * [`string`](string.h)

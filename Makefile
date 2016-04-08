@@ -6,7 +6,7 @@ LDFLAGS = -rdynamic
 CXX = $(GXX)
 LD = $(GXX)
 
-SOURCE_DIR = stream
+SOURCE_DIR = iterator stream
 SOURCE_FILES = \
 $(wildcard *.cc) $(foreach dir,$(SOURCE_DIR),$(wildcard $(dir)/*.cc))
 SOURCE_TESTS = \
