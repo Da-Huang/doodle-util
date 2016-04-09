@@ -12,7 +12,7 @@ namespace {
 
 class FakeOutputStream : public OutputStream {
  public:
-  FakeOutputStream(std::ostream* out) : out_(out) {}
+  explicit FakeOutputStream(std::ostream* out) : out_(out) {}
 
  protected:
   std::ostream* GetOutputStream() override { return out_; }

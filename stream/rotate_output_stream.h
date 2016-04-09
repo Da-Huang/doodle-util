@@ -20,7 +20,7 @@ namespace util {
 //   Outputs: CDAB
 class RotateOutputStream final : public OutputStream {
  public:
-  RotateOutputStream(std::ostream* out) : front_out_(out) {}
+  explicit RotateOutputStream(std::ostream* out) : front_out_(out) {}
   ~RotateOutputStream() override;
 
   // Sets this object to output front data.
