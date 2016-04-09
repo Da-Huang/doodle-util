@@ -62,14 +62,11 @@ std::string ToString(const char* item);
 // Common string utils.
 
 // Gets length of a string.
-//
-// `str` cannot be nullptr.
 size_t Strlen(const char* str);
 
 // Copies string from src to dest.
 //
-// `src` and `dest` cannot be nullptr. `dest` should provide enough space and
-// cannot be overlapped with `src`.
+// `dest` should provide enough space and cannot be overlapped with `src`.
 void Strcpy(char* dest, const char* src);
 
 }  // namespace util

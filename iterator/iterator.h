@@ -11,8 +11,6 @@ class Iterator {
 
   // Gets next item.
   //
-  // `item` cannot be nullptr. Otherwise, it crashes.
-  //
   // Returns true, if it succeeds.
   virtual bool Next(Type* item) = 0;
 };
