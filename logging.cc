@@ -49,13 +49,17 @@ std::string DemangleLine(const std::string& line) {
 Logger::~Logger() {
   if (!should_log_ || level_ > FLAG_v) return;
 
+  // Uses an ostringstream as buffer to output in order to print consistently
+  // under multithreading.
+  std::ostringstream oss;
+
   // Indents by 2.
   std::istringstream iss(ostr_.str());
   std::string line;
   std::getline(iss, line);
-  std::cerr << line << std::endl;
+  oss << line << std::endl;
   while (std::getline(iss, line)) {
-    std::cerr << "  " << line << std::endl;
+    oss << "  " << line << std::endl;
   }
 
   // Handles FATAL to output backtrace.
@@ -64,14 +68,17 @@ Logger::~Logger() {
     size_t size = backtrace(backtrace_buffer, FLAG_backtrace_buffer_size);
     char** backtrace_msgs = backtrace_symbols(backtrace_buffer, size);
     if (backtrace_msgs == nullptr) {
-      std::cerr << " Failed to backtrace." << std::endl;
+      oss << " Failed to backtrace." << std::endl;
       return;
     }
     for (size_t i = 0; i < size; ++i) {
-      std::cerr << "  " << DemangleLine(backtrace_msgs[i]) << std::endl;
+      oss << "  " << DemangleLine(backtrace_msgs[i]) << std::endl;
     }
     std::free(backtrace_msgs);
+    std::cerr << oss.str();
     std::exit(EXIT_FAILURE);
+  } else {
+    std::cerr << oss.str();
   }
 }
 
