@@ -10,6 +10,7 @@ This library provides useful utils.
 * [`logging`](logging.h)
 * [`stream`](stream)
 * [`string`](string.h)
+* [`thread`](thread)
 
 ---
 ## Requirements

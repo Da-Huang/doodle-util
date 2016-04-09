@@ -2,11 +2,11 @@ GXX = g++
 INCLUDES = -I.
 CXXFLAGS = \
 -std=c++11 -Wall $(INCLUDES) -march=native -funroll-loops -O3
-LDFLAGS = -rdynamic
+LDFLAGS = -rdynamic -pthread
 CXX = $(GXX)
 LD = $(GXX)
 
-SOURCE_DIR = iterator stream
+SOURCE_DIR = iterator stream thread
 SOURCE_FILES = \
 $(wildcard *.cc) $(foreach dir,$(SOURCE_DIR),$(wildcard $(dir)/*.cc))
 SOURCE_TESTS = \
