@@ -5,6 +5,8 @@
 template <typename Type>
 class Iterator {
  public:
+  Iterator() = default;
+  Iterator(const Iterator& iterator) = delete;
   virtual ~Iterator() = default;
 
   // Gets next item.
