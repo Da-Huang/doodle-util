@@ -9,7 +9,7 @@ This library provides useful utils.
 * [`iterator`](iterator)
 * [`logging`](logging.h)
 * [`stream`](stream)
-* [`string`](string.h)
+* [`string`](string)
 * [`thread`](thread)
 
 ---

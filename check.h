@@ -7,7 +7,7 @@
 
 #include "logging.h"
 #include "stream/rotate_output_stream.h"
-#include "string.h"
+#include "string/string.h"
 
 // Checks whether condition is true.
 //

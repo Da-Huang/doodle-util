@@ -7,7 +7,7 @@
 #include "commandline_flag.h"
 #include "logging.h"
 #include "macro.h"
-#include "string.h"
+#include "string/string.h"
 
 DEFINE_bool(b, true, "Test bool flag.");
 

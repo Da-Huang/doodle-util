@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-#include "string.h"
+#include "string/string.h"
 
 namespace util {
 

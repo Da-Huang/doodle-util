@@ -6,7 +6,7 @@ LDFLAGS = -rdynamic -pthread
 CXX = $(GXX)
 LD = $(GXX)
 
-SOURCE_DIR = iterator stream thread
+SOURCE_DIR = iterator stream string thread
 SOURCE_FILES = \
 $(wildcard *.cc) $(foreach dir,$(SOURCE_DIR),$(wildcard $(dir)/*.cc))
 SOURCE_TESTS = \
