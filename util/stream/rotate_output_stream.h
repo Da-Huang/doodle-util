@@ -4,7 +4,7 @@
 #include <ostream>
 #include <sstream>
 
-#include "stream/output_stream.h"
+#include "util/stream/output_stream.h"
 
 namespace util {
 

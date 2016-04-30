@@ -5,9 +5,9 @@
 
 #include <ostream>
 
-#include "logging.h"
-#include "stream/rotate_output_stream.h"
-#include "string/string.h"
+#include "util/logging.h"
+#include "util/stream/rotate_output_stream.h"
+#include "util/string/string.h"
 
 // Checks whether condition is true.
 //

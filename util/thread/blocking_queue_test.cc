@@ -3,9 +3,9 @@
 #include <thread>
 #include <vector>
 
-#include "check.h"
-#include "init.h"
-#include "logging.h"
+#include "util/check.h"
+#include "util/init.h"
+#include "util/logging.h"
 
 namespace util {
 namespace {

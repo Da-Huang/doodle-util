@@ -3,11 +3,11 @@
 #include <string>
 #include <unordered_set>
 
-#include "check.h"
-#include "commandline_flag.h"
-#include "logging.h"
-#include "macro.h"
-#include "string/string.h"
+#include "util/check.h"
+#include "util/commandline_flag.h"
+#include "util/logging.h"
+#include "util/macro.h"
+#include "util/string/string.h"
 
 DEFINE_bool(b, true, "Test bool flag.");
 

@@ -4,8 +4,8 @@
 #include <string>
 #include <unordered_map>
 
-#include "check.h"
-#include "commandline_flag.h"
+#include "util/check.h"
+#include "util/commandline_flag.h"
 
 DEFINE_bool(help, false, "Show help information.");
 

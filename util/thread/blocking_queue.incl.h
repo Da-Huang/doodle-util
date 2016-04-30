@@ -1,8 +1,8 @@
-#include "thread/blocking_queue.h"
+#include "blocking_queue.h"
 
 #include <mutex>
 
-#include "check.h"
+#include "util/check.h"
 
 namespace util {
 

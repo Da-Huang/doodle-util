@@ -3,10 +3,10 @@
 #include <atomic>
 #include <vector>
 
-#include "check.h"
-#include "init.h"
-#include "logging.h"
-#include "thread/blocking_queue.h"
+#include "util/check.h"
+#include "util/init.h"
+#include "util/logging.h"
+#include "util/thread/blocking_queue.h"
 
 namespace util {
 namespace {

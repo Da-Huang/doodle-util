@@ -4,7 +4,7 @@
 #include <thread>
 #include <vector>
 
-#include "thread/blocking_queue.h"
+#include "util/thread/blocking_queue.h"
 
 namespace util {
 

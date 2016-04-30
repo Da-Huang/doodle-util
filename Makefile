@@ -6,7 +6,7 @@ LDFLAGS = -rdynamic -pthread
 CXX = $(GXX)
 LD = $(GXX)
 
-SOURCE_DIR = iterator stream string thread
+SOURCE_DIR = util util/iterator util/stream util/string util/thread
 SOURCE_FILES = \
 $(wildcard *.cc) $(foreach dir,$(SOURCE_DIR),$(wildcard $(dir)/*.cc))
 SOURCE_TESTS = \
@@ -29,11 +29,13 @@ $(wildcard *test) $(foreach dir,$(SOURCE_DIR),$(wildcard $(dir)/*test))
 EXISTED_MAINS = \
 $(wildcard *main) $(foreach dir,$(SOURCE_DIR),$(wildcard $(dir)/*main))
 
-all: main test
+all: main test lib
 
 main: $(MAINS)
 
 test: $(TESTS)
+
+lib: util-lib.a
 
 %.o: %.cc
 	@echo Compiling $< and Generating its Dependencies ...
@@ -48,6 +50,11 @@ test: $(TESTS)
 	@echo Generating Test: $@ ...
 	$(LD) -o $@ $^ $(LDFLAGS)
 	@echo Test $@ Done.
+
+%.a: $(LIB_OBJS)
+	@echo Linking Static Library: $@ ...
+	ar rcs $@ $^
+	@echo Library $@ Done.
 
 -include $(DEPS)
 
