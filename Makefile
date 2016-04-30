@@ -29,32 +29,34 @@ $(wildcard *test) $(foreach dir,$(SOURCE_DIR),$(wildcard $(dir)/*test))
 EXISTED_MAINS = \
 $(wildcard *main) $(foreach dir,$(SOURCE_DIR),$(wildcard $(dir)/*main))
 
-all: main test lib
+all: lib main test
+
+LIB = util-lib.a
+
+lib: $(LIB)
 
 main: $(MAINS)
 
 test: $(TESTS)
 
-lib: util-lib.a
-
 %.o: %.cc
 	@echo Compiling $< and Generating its Dependencies ...
 	$(CXX) -c $(CXXFLAGS) -MMD -o $@ $<
-
-%main: %main.o $(LIB_OBJS)
-	@echo Generating Main: $@ ...
-	$(LD) -o $@ $^ $(LDFLAGS)
-	@echo Main $@ Done.
-
-%test: %test.o $(LIB_OBJS)
-	@echo Generating Test: $@ ...
-	$(LD) -o $@ $^ $(LDFLAGS)
-	@echo Test $@ Done.
 
 %.a: $(LIB_OBJS)
 	@echo Linking Static Library: $@ ...
 	ar rcs $@ $^
 	@echo Library $@ Done.
+
+%main: %main.o $(LIB)
+	@echo Generating Main: $@ ...
+	$(LD) -o $@ $^ $(LDFLAGS)
+	@echo Main $@ Done.
+
+%test: %test.o $(LIB)
+	@echo Generating Test: $@ ...
+	$(LD) -o $@ $^ $(LDFLAGS)
+	@echo Test $@ Done.
 
 -include $(DEPS)
 
@@ -64,6 +66,8 @@ clean:
 	@$(RM) $(EXISTED_MAINS)
 	@echo Removing Test Objects.
 	@$(RM) $(EXISTED_TESTS)
+	@echo Removing $(LIB).
+	@$(RM) $(LIB)
 	@echo Removing Object Files.
 	@$(RM) $(EXISTED_OBJS)
 	@echo Removing Dependency Files.
