@@ -24,6 +24,8 @@ EXISTED_DEPS = \
 $(wildcard *.d) $(foreach dir,$(SOURCE_DIR),$(wildcard $(dir)/*.d))
 EXISTED_OBJS = \
 $(wildcard *.o) $(foreach dir,$(SOURCE_DIR),$(wildcard $(dir)/*.o))
+EXISTED_LIBS = \
+$(wildcard *.a) $(foreach dir,$(SOURCE_DIR),$(wildcard $(dir)/*.a))
 EXISTED_TESTS = \
 $(wildcard *test) $(foreach dir,$(SOURCE_DIR),$(wildcard $(dir)/*test))
 EXISTED_MAINS = \
@@ -62,15 +64,15 @@ test: $(TESTS)
 
 clean:
 	@echo $(SOURCE_FILES)
-	@echo Removing Main Objects.
+	@echo Removing Mains.
 	@$(RM) $(EXISTED_MAINS)
-	@echo Removing Test Objects.
+	@echo Removing Tests.
 	@$(RM) $(EXISTED_TESTS)
-	@echo Removing $(LIB).
-	@$(RM) $(LIB)
-	@echo Removing Object Files.
+	@echo Removing Libraries.
+	@$(RM) $(EXISTED_LIBS)
+	@echo Removing Objects.
 	@$(RM) $(EXISTED_OBJS)
-	@echo Removing Dependency Files.
+	@echo Removing Dependencies.
 	@$(RM) $(EXISTED_DEPS)
 	@echo All Clean.
 
