@@ -3,14 +3,14 @@ This library provides useful utils.
 
 ---
 ## Modules
-* [`check`](check.h)
-* [`commandline_flag`](commandline_flag.h)
-* [`io`](io.h)
-* [`iterator`](iterator)
-* [`logging`](logging.h)
-* [`stream`](stream)
-* [`string`](string)
-* [`thread`](thread)
+* [`check`](util/check.h)
+* [`commandline_flag`](util/commandline_flag.h)
+* [`io`](util/io.h)
+* [`iterator`](util/iterator)
+* [`logging`](util/logging.h)
+* [`stream`](util/stream)
+* [`string`](util/string)
+* [`thread`](util/thread)
 
 ---
 ## Requirements
