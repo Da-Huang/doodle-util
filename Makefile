@@ -63,7 +63,6 @@ test: $(TESTS)
 -include $(DEPS)
 
 clean:
-	@echo $(SOURCE_FILES)
 	@echo Removing Mains.
 	@$(RM) $(EXISTED_MAINS)
 	@echo Removing Tests.
