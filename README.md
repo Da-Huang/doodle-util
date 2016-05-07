@@ -3,6 +3,7 @@ This library provides useful utils.
 
 ---
 ## Modules
+* [`algorithm`](util/algorithm)
 * [`check`](util/check.h)
 * [`commandline_flag`](util/commandline_flag.h)
 * [`io`](util/io.h)
